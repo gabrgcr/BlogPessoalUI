@@ -1,0 +1,22 @@
+#img-bg{
+    background-image: url('../../assets/img/back.jpg');
+    min-height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.blur{
+    backdrop-filter: blur(2px);
+    background: rgba(255,255,255,0.8);
+    border: 1px solid;
+    border-color: rgba(0, 0, 0, 0.507);
+    border-top: none;
+    border-bottom: none;
+    min-height: 100vh;
+}
+
+.h-100{
+    min-height: 100vh;
+    background-color: rgba(0,0,0,0);
+}
