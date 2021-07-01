@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { faUserEdit } from '@fortawesome/free-solid-svg-icons';
+import { AuthService } from './service/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -9,4 +10,6 @@ import { faUserEdit } from '@fortawesome/free-solid-svg-icons';
 export class AppComponent {
   title = 'Blog Pessoal';
   faUserEdit = faUserEdit;
+
+  constructor(public auth:AuthService){}
 }

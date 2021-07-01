@@ -16,7 +16,7 @@
       <li class="nav-item active">
         <a class="nav-link" href="#"
           ><img
-            src="https://i.imgur.com/2DfZHB7.jpeg"
+            src="{{foto}}"
             class="img-fluid rounded-circle"
             alt="avatar"
             width="50px"
@@ -24,7 +24,7 @@
         /></a>
       </li>
       <li class="nav-item pl-2">
-        <p class="m-0 font-weight-bold text-white fs-16">Nome do Usuario</p>
+        <p class="m-0 font-weight-bold text-white fs-16">{{nome}}</p>
       </li>
       <li class="nav-item pl-2">
         <a href=""><i class="fas fa-user-edit text-white"></i></a>
@@ -32,7 +32,7 @@
     </ul>
     <ul class="navbar-nav ml-auto d-flex align-items-center">
       <li class="nav-item pl-2 text-white fs-16">
-        <a href="" class="text-white"
+        <a href="" class="text-white" (click)='sair()'
           >Sair <i class="fas fa-sign-out-alt"></i
         ></a>
       </li>

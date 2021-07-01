@@ -1,11 +1,12 @@
 import { postagem } from "./postagem";
 
 export class user{
+    public foto:string;
     public id:number;
     public nome:string;
-    public user:string;
-    public senha:string;
-    public foto:string;
-    public tipo:string;
+    public token:string;
     public post:postagem[];
+    public senha:string;
+    public tipo:string;
+    public user:string
 }

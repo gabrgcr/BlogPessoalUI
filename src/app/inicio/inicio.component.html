@@ -1,1 +1,157 @@
-<p>inicio works!</p>
+<div class="container-fluid bg-secondary text-white">
+  <div class="row d-flex align-items-center">
+    <div class="col-md-6">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-6">
+          <h1 class="fs-54">Seja Bem vindo!</h1>
+          <h5 class="fs-18">Expresse aqui os seus pensamentos</h5>
+        </div>
+      </div>
+      <div class="row d-flex justify-content-center mt-3 mb-5">
+        <div class="col-md-6">
+          <button
+            class="btn btn-light mr-2"
+            data-toggle="modal"
+            data-target="#NovaPostagem"
+          >
+            Nova Postagem
+          </button>
+          <a class="btn btn-outline-light" href="#postagens">Ver Postagem</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 d-flex justify-content">
+      <img src="/../../assets/img/blogimg.png" height="500px" width="500px" />
+    </div>
+  </div>
+</div>
+<div class="container" id="postagens">
+  <nav>
+    <div
+      class="nav nav-tabs d-flex justify-content-center my-2"
+      id="nav-tab"
+      role="tablist"
+    >
+      <a
+        class="nav-item nav-link active text-secondary font-weight-bold"
+        id="nav-todas-tab"
+        data-toggle="tab"
+        href="#nav-todas"
+        role="tab"
+        aria-controls="nav-todas"
+        aria-selected="true"
+        >Todas as Postagens</a
+      >
+      <a
+        class="nav-item nav-link text-secondary font-weight-bold"
+        id="nav-minhas-tab"
+        data-toggle="tab"
+        href="#nav-minhas"
+        role="tab"
+        aria-controls="nav-minhas"
+        aria-selected="false"
+        >Minhas Postagens</a
+      >
+      <a
+        class="nav-item nav-link text-secondary font-weight-bold"
+        id="nav-contato-tab"
+        data-toggle="tab"
+        href="#nav-contato"
+        role="tab"
+        aria-controls="nav-contato"
+        aria-selected="false"
+        >Contato</a
+      >
+    </div>
+  </nav>
+  <div
+    class="tab-content d-flex justify-content-center my-5"
+    id="nav-tabContent"
+  >
+    <div
+      class="tab-pane fade show active"
+      id="nav-todas"
+      role="tabpanel"
+      aria-labelledby="nav-todas-tab"
+    >
+      todas
+    </div>
+    <div
+      class="tab-pane fade"
+      id="nav-minhas"
+      role="tabpanel"
+      aria-labelledby="nav-minhas-tab"
+    >
+      minhas
+    </div>
+    <div
+      class="tab-pane fade"
+      id="nav-contato"
+      role="tabpanel"
+      aria-labelledby="nav-contato-tab"
+    >
+      tema
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="NovaPostagem"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="TituloModalCentralizado"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="TituloModalCentralizado">Nova Postagem</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Fechar"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="titulo">Título</label>
+          <input
+            type="text"
+            class="form-control"
+            id="titulo"
+            placeholder="Digite o título"
+          />
+        </div>
+        <div class="form-group">
+          <label for="texto">Texto</label>
+          <textarea
+            class="form-control"
+            id="texto"
+            placeholder="Digite o texto"
+            rows="3"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="texto"
+            >Escolha um tema ou <a routerLink="/tema" data-dismiss="modal">cadastre um novo</a></label
+          >
+          <select class="form-control" id="tema">
+              <option value="">Temas</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">
+          Cancelar
+        </button>
+        <button type="button" class="btn btn-success">Publicar</button>
+      </div>
+    </div>
+  </div>
+</div>

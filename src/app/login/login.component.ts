@@ -26,13 +26,13 @@ export class LoginComponent implements OnInit {
         environment.foto = this.login.foto;
         environment.nome = this.login.nome;
         environment.id = this.login.id;
-        //environment.senha = this.login.senha;
+        environment.senha = this.login.senha;
 
         console.log(environment.foto);
         console.log(environment.token);
         console.log(environment.nome);
         console.log(environment.id);
-        //console.log(environment.senha);
+        console.log(environment.senha);
         this.router.navigate(['/inicio']);
       },
       (erro) => {
@@ -40,6 +40,6 @@ export class LoginComponent implements OnInit {
           alert('Usuário ou senha incorretos!');
         }
       }
-    );
+    )
   }
 }
