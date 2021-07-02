@@ -1,6 +1,7 @@
 import { postagem } from "./postagem";
 
 export class user{
+    public user:string;
     public foto:string;
     public id:number;
     public nome:string;
@@ -8,5 +9,4 @@ export class user{
     public post:postagem[];
     public senha:string;
     public tipo:string;
-    public user:string
 }
