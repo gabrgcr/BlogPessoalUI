@@ -19,6 +19,8 @@ import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
 import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
 import { UserEditComponent } from './edit/user-edit/user-edit.component';
+import { AlertaComponent } from './alerta/alerta.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import { UserEditComponent } from './edit/user-edit/user-edit.component';
     PostagemEditComponent,
     PostagemDeleteComponent,
     UserEditComponent,
+    AlertaComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +44,7 @@ import { UserEditComponent } from './edit/user-edit/user-edit.component';
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
+    ModalModule.forRoot(),
   ],
   providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent],

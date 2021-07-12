@@ -50,6 +50,7 @@ export class UserEditComponent implements OnInit {
     } else {
       this.auth.cadastrar(this.User).subscribe((resp: user) => {
         this.User = resp;
+        console.log(resp);
         this.router.navigate(['/login']);
         alert('Usuário Cadastrado com Sucesso! Faça login novamente');
         environment.foto = '';

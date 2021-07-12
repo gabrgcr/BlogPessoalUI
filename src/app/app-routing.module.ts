@@ -11,21 +11,21 @@ import { LoginComponent } from './login/login.component';
 import { TemaComponent } from './tema/tema.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'login', pathMatch: 'full'},
-  {path:'login', component: LoginComponent},
-  {path:'cadastrar', component: CadastrarComponent},
-  {path:'inicio', component:InicioComponent},
-  {path:'tema', component:TemaComponent},
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'cadastrar', component: CadastrarComponent },
+  { path: 'inicio', component: InicioComponent },
+  { path: 'tema', component: TemaComponent },
 
-  {path:'tema-edit/:id', component:TemaEditComponent},
-  {path:'tema-delete/:id', component:TemaDeleteComponent},
-  {path:'postagem-edit/:id', component:PostagemEditComponent},
-  {path:'postagem-delete/:id', component:PostagemDeleteComponent},
-  {path:'user-edit/:id', component:UserEditComponent}
+  { path: 'tema-edit/:id', component: TemaEditComponent },
+  { path: 'tema-delete/:id', component: TemaDeleteComponent },
+  { path: 'postagem-edit/:id', component: PostagemEditComponent },
+  { path: 'postagem-delete/:id', component: PostagemDeleteComponent },
+  { path: 'user-edit/:id', component: UserEditComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

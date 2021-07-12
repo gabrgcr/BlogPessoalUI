@@ -1,0 +1,21 @@
+import { Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+
+@Component({
+  selector: 'app-alerta',
+  templateUrl: './alerta.component.html',
+  styleUrls: ['./alerta.component.css'],
+})
+export class AlertaComponent implements OnInit {
+  @Input() message: string;
+  @Input() type: string = 'success';
+
+  constructor(public modal: BsModalRef) {}
+
+  ngOnInit() {}
+
+  onClose() {
+    this.modal.hide();
+  }
+}
