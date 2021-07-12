@@ -32,6 +32,7 @@ export class InicioComponent implements OnInit {
       this.router.navigate(['/login']);
     }
     this.getAllTemas();
+    this.idUser = environment.id;
   }
 
   getAllTemas() {
@@ -47,6 +48,7 @@ export class InicioComponent implements OnInit {
   }
 
   publicar() {
+    this.idUser = environment.id;
     this.Tema.id = this.idTema;
     this.usuario.id = this.idUser;
     this.Postagem.tema = this.Tema;
