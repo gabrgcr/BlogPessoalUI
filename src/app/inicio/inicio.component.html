@@ -79,7 +79,7 @@
     >
       <div class="card-columns">
         <div
-          *ngFor="let i of listaPostagens"
+          *ngFor="let i of listaPostagens | orderBy: key: reverse"
           class="card text-white bg-info mb-3"
         >
           <div class="card-header">
@@ -135,7 +135,7 @@
       role="tabpanel"
       aria-labelledby="nav-contato-tab"
     >
-      <div *ngFor="let i of listaTemas" class="card-columns my-5">
+      <div *ngFor="let i of listaTemas | orderBy: key: reverse" class="card-columns my-5">
         <div
           *ngFor="let item of i.post"
           class="card text-white bg-info mb-3 mx-0"
@@ -215,7 +215,7 @@
             class="form-control"
             id="tema"
           >
-            <option *ngFor="let i of listaTemas" [ngValue]="i.id">
+            <option *ngFor="let i of listaTemas | orderBy: key : reverse" [ngValue]="i.id">
               {{ i.descricao }}
             </option>
           </select>
