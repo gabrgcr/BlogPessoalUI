@@ -44,6 +44,7 @@
         >Todas as Postagens</a
       >
       <a
+        (click)='findByIdUser(); getAllPostagens();'
         class="nav-item nav-link text-secondary font-weight-bold"
         id="nav-minhas-tab"
         data-toggle="tab"
@@ -54,6 +55,7 @@
         >Minhas Postagens</a
       >
       <a
+      (click)='getAllTemas(); getAllPostagens();'
         class="nav-item nav-link text-secondary font-weight-bold"
         id="nav-contato-tab"
         data-toggle="tab"
@@ -61,7 +63,7 @@
         role="tab"
         aria-controls="nav-contato"
         aria-selected="false"
-        >Contato</a
+        >Postagem por Tema</a
       >
     </div>
   </nav>
@@ -75,7 +77,26 @@
       role="tabpanel"
       aria-labelledby="nav-todas-tab"
     >
-      todas
+      <div class="card-columns">
+        <div
+          *ngFor="let i of listaPostagens"
+          class="card text-white bg-info mb-3"
+        >
+          <div class="card-header">
+            {{ i.tema.descricao }}, por {{ i.usuario.nome }}
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{ i.titulo }}</h5>
+            <p class="card-text">{{ i.texto }}</p>
+            <p class="card-text">
+              <small class="text-white-50"
+                >{{ i.data | date: "dd/MM/yyyy" }} às
+                {{ i.data | date: "HH:mm" }}</small
+              >
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
     <div
       class="tab-pane fade"
@@ -83,7 +104,26 @@
       role="tabpanel"
       aria-labelledby="nav-minhas-tab"
     >
-      minhas
+    <div class="card-columns">
+      <div
+        *ngFor='let i of usuario.post'
+        class="card text-white bg-info mb-3"
+      >
+        <div class="card-header">
+          {{ i.tema.descricao }}
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{ i.titulo }}</h5>
+          <p class="card-text">{{ i.texto }}</p>
+          <p class="card-text">
+            <small class="text-white-50"
+              >{{ i.data | date: "dd/MM/yyyy" }} às
+              {{ i.data | date: "HH:mm" }}</small
+            >
+          </p>
+        </div>
+      </div>
+    </div>
     </div>
     <div
       class="tab-pane fade"
@@ -91,7 +131,26 @@
       role="tabpanel"
       aria-labelledby="nav-contato-tab"
     >
-      tema
+    <div *ngFor='let i of listaTemas' class="card-columns my-5">
+      <div
+        *ngFor='let item of i.post'
+        class="card text-white bg-info mb-3 mx-0"
+      >
+        <div class="card-header">
+          {{ i.descricao }}
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{ item.titulo }}</h5>
+          <p class="card-text">{{ item.texto }}</p>
+          <p class="card-text">
+            <small class="text-white-50"
+              >{{ item.data | date: "dd/MM/yyyy" }} às
+              {{ item.data | date: "HH:mm" }}</small
+            >
+          </p>
+        </div>
+      </div>
+    </div>
     </div>
   </div>
 </div>
@@ -122,7 +181,7 @@
         <div class="form-group">
           <label for="titulo">Título</label>
           <input
-            [(ngModel)]='Postagem.titulo'
+            [(ngModel)]="Postagem.titulo"
             type="text"
             class="form-control"
             id="titulo"
@@ -132,7 +191,7 @@
         <div class="form-group">
           <label for="texto">Texto</label>
           <textarea
-            [(ngModel)]='Postagem.texto'
+            [(ngModel)]="Postagem.texto"
             class="form-control"
             id="texto"
             placeholder="Digite o texto"
@@ -147,12 +206,12 @@
             ></label
           >
           <select
-            [(ngModel)]='idTema'
+            [(ngModel)]="idTema"
             (change)="findByIdTema()"
             class="form-control"
             id="tema"
           >
-            <option *ngFor='let i of listaTemas' [ngValue]='i.id'>
+            <option *ngFor="let i of listaTemas" [ngValue]="i.id">
               {{ i.descricao }}
             </option>
           </select>
@@ -162,7 +221,12 @@
         <button type="button" class="btn btn-danger" data-dismiss="modal">
           Cancelar
         </button>
-        <button (click)="publicar()" type="button" class="btn btn-success">
+        <button
+          (click)="publicar(); getAllPostagens()"
+          type="button"
+          class="btn btn-success"
+          data-dismiss="modal"
+        >
           Publicar
         </button>
       </div>
