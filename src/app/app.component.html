@@ -1,4 +1,4 @@
 <app-menu *ngIf="auth.logado()"></app-menu>
-<router-outlet></router-outlet>
-<app-footer *ngIf="auth.logado()"></app-footer>
+<router-outlet class="h-100"></router-outlet>
+<app-footer *ngIf="auth.logado()" sticky="bottom"></app-footer>
 <fa-icon faUserEdit="faUserEdit"></fa-icon>
