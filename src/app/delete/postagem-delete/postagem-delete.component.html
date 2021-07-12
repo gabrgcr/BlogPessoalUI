@@ -1,0 +1,41 @@
+<div class="container my-5">
+  <div class="row d-flex justify-content-center">
+    <div class="col-12">
+      <h1 class="text-center text-secondary">Deletar Postagem</h1>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <div class="col-12">
+      <h4 class="text-center text-secondary">
+        Deseja mesmo apagar essa postagem?
+      </h4>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <div class="col-3">
+      <div class="card text-white bg-info mb-3">
+        <div class="card-header">
+          {{ Postagem.tema.descricao }}
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{ Postagem.titulo }}</h5>
+          <p class="card-text">{{ Postagem.texto }}</p>
+          <p class="card-text">
+            <small class="text-white-50"
+              >{{ Postagem.data | date: "dd/MM/yyyy" }} às
+              {{ Postagem.data | date: "HH:mm" }}</small
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <div class="col-3 m-1">
+        <button class="btn btn-danger btn-block" routerLink="/inicio">Não</button>
+      </div>
+      <div class="col-3 m-1">
+        <button class="btn btn-success btn-block" (click)="apagar()">Sim</button>
+      </div>
+  </div>
+</div>

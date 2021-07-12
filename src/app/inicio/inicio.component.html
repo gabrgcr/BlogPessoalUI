@@ -44,7 +44,7 @@
         >Todas as Postagens</a
       >
       <a
-        (click)='findByIdUser(); getAllPostagens();'
+        (click)="findByIdUser(); getAllPostagens()"
         class="nav-item nav-link text-secondary font-weight-bold"
         id="nav-minhas-tab"
         data-toggle="tab"
@@ -55,7 +55,7 @@
         >Minhas Postagens</a
       >
       <a
-      (click)='getAllTemas(); getAllPostagens();'
+        (click)="getAllTemas(); getAllPostagens()"
         class="nav-item nav-link text-secondary font-weight-bold"
         id="nav-contato-tab"
         data-toggle="tab"
@@ -104,26 +104,30 @@
       role="tabpanel"
       aria-labelledby="nav-minhas-tab"
     >
-    <div class="card-columns">
-      <div
-        *ngFor='let i of usuario.post'
-        class="card text-white bg-info mb-3"
-      >
-        <div class="card-header">
-          {{ i.tema.descricao }}
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">{{ i.titulo }}</h5>
-          <p class="card-text">{{ i.texto }}</p>
-          <p class="card-text">
-            <small class="text-white-50"
-              >{{ i.data | date: "dd/MM/yyyy" }} às
-              {{ i.data | date: "HH:mm" }}</small
-            >
-          </p>
+      <div class="card-columns">
+        <div
+          *ngFor="let i of usuario.post"
+          class="card text-white bg-info mb-3"
+        >
+          <div class="card-header">
+            {{ i.tema.descricao }}
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{ i.titulo }}</h5>
+            <p class="card-text">{{ i.texto }}</p>
+            <p class="card-text">
+              <small class="text-white-50"
+                >{{ i.data | date: "dd/MM/yyyy" }} às
+                {{ i.data | date: "HH:mm" }}</small
+              >
+            </p>
+            <div class="col card-action">
+              <a [routerLink]="['/postagem-edit',i.id]" class="btn btn-primary mx-2">Editar</a>
+              <a [routerLink]="['/postagem-delete',i.id]" class="btn btn-danger mx-2">Apagar</a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
     </div>
     <div
       class="tab-pane fade"
@@ -131,26 +135,26 @@
       role="tabpanel"
       aria-labelledby="nav-contato-tab"
     >
-    <div *ngFor='let i of listaTemas' class="card-columns my-5">
-      <div
-        *ngFor='let item of i.post'
-        class="card text-white bg-info mb-3 mx-0"
-      >
-        <div class="card-header">
-          {{ i.descricao }}
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">{{ item.titulo }}</h5>
-          <p class="card-text">{{ item.texto }}</p>
-          <p class="card-text">
-            <small class="text-white-50"
-              >{{ item.data | date: "dd/MM/yyyy" }} às
-              {{ item.data | date: "HH:mm" }}</small
-            >
-          </p>
+      <div *ngFor="let i of listaTemas" class="card-columns my-5">
+        <div
+          *ngFor="let item of i.post"
+          class="card text-white bg-info mb-3 mx-0"
+        >
+          <div class="card-header">
+            {{ i.descricao }}
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{ item.titulo }}</h5>
+            <p class="card-text">{{ item.texto }}</p>
+            <p class="card-text">
+              <small class="text-white-50"
+                >{{ item.data | date: "dd/MM/yyyy" }} às
+                {{ item.data | date: "HH:mm" }}</small
+              >
+            </p>
+          </div>
         </div>
       </div>
-    </div>
     </div>
   </div>
 </div>

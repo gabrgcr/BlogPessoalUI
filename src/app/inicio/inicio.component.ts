@@ -4,7 +4,6 @@ import { environment } from 'src/environments/environment.prod';
 import { postagem } from '../model/postagem';
 import { tema } from '../model/tema';
 import { user } from '../model/user';
-import { AuthService } from '../service/auth.service';
 import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
 import { UsuarioService } from '../service/usuario.service';
